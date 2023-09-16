@@ -1,8 +1,8 @@
 import style from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
+import { getContacts, getFilter } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { fetchContacts, requestDeleteContact } from 'redux/operations';
+import { fetchContacts, requestDeleteContact } from 'redux/contacts/operations';
 import Loader from 'components/Loader/Loader';
 import Error from 'components/Error/Error';
 
@@ -11,7 +11,6 @@ const ContactList = () => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-  
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -26,9 +25,9 @@ const ContactList = () => {
 
   return (
     <>
-    {contacts.isLoading && <Loader />}
-    {contacts.error && <Error error={contacts.error}/>}
-    <ul className={style.list}>
+      {contacts.isLoading && <Loader />}
+      {contacts.error && <Error error={contacts.error} />}
+      <ul className={style.list}>
         {filteredContacts.map(contact => {
           const { id, name, phone } = contact;
           return (
@@ -47,7 +46,6 @@ const ContactList = () => {
           );
         })}
       </ul>
-     
     </>
   );
 };

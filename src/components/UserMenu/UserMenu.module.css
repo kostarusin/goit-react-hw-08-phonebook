@@ -1,0 +1,26 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 500;
+}
+
+.user {
+  margin: 0;
+}
+
+.LogoutBtn {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(83, 87, 87);
+}
+
+.LogoutBtn:hover {
+  color: black;
+  background-color: tomato;
+}
