@@ -4,6 +4,7 @@ import {
   requestAddContact,
   requestDeleteContact,
 } from './operations';
+
 // import persistReducer from 'redux-persist/es/persistReducer';
 
 const initialState = {

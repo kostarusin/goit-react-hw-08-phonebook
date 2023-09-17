@@ -3,17 +3,20 @@ import { Suspense } from 'react';
 import { Container, Header, Link } from './SharedLayout.styled';
 import Loader from 'components/Loader/Loader';
 import UserMenu from 'components/UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
 
 const SharedLayout = () => {
+  const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <Container>
       <Header>
         <nav>
           <Link to="/">Contacts</Link>
-          <Link to="/register">Registration</Link>
-          <Link to="/login">Login</Link>
+          {!isLoggedIn && <Link to="/register">Registration</Link>}
+          {!isLoggedIn && <Link to="/login">Login</Link>}
         </nav>
-        {<UserMenu />}
+        {isLoggedIn && <UserMenu />}
       </Header>
       <Suspense fallback={<Loader />}>
         <main>
