@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-const token = {
+export const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
@@ -14,6 +14,11 @@ const token = {
 export async function onRegister(credentials) {
   const { data } = await axios.post('/users/signup', credentials);
   token.set(data.token);
+  return data;
+}
+
+export async function onGetCurrentUser() {
+  const { data } = await axios.get('/users/current');
   return data;
 }
 
@@ -31,16 +36,15 @@ export async function onLogout() {
 
 export async function getContacts() {
   const { data } = await axios.get(`/contacts`);
-  token.set(data.token);
   return data;
 }
 
 export async function addContact(contact) {
-  const { data } = await axios.post(contact);
+  const { data } = await axios.post(`/contacts`, contact);
   return data;
 }
 
 export async function deleteContact(id) {
-  const { data } = await axios.delete(id);
+  const { data } = await axios.delete(`/contacts/${id}`);
   return data;
 }

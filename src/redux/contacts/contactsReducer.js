@@ -5,8 +5,6 @@ import {
   requestDeleteContact,
 } from './operations';
 
-// import persistReducer from 'redux-persist/es/persistReducer';
-
 const initialState = {
   contacts: {
     items: [],
@@ -33,8 +31,9 @@ const contactsActionsSlice = createSlice({
         state.contacts.error = null;
       })
       .addCase(fetchContacts.fulfilled, (state, action) => {
-        state.contacts.isLoading = false;
         state.contacts.items = action.payload;
+        state.contacts.isLoading = false;
+        state.contacts.error = null;
       })
       .addCase(fetchContacts.rejected, (state, action) => {
         state.contacts.isLoading = false;

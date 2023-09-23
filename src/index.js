@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { App } from 'components/App';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store';
+import { persistor, store } from 'redux/store';
 import { BrowserRouter } from 'react-router-dom';
-// import { ChakraProvider } from '@chakra-ui/react';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  <BrowserRouter basename="/goit-react-hw-08-phonebook">
+  <React.StrictMode>
     <Provider store={store}>
-      {/* <ChakraProvider> */}
-      <App />
-      {/* </ChakraProvider> */}
+      <BrowserRouter basename="/goit-react-hw-08-phonebook">
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
+      </BrowserRouter>
     </Provider>
-  </BrowserRouter>
-  // </React.StrictMode>
+  </React.StrictMode>
 );

@@ -29,13 +29,13 @@ const ContactList = () => {
     <>
       {contacts.isLoading && <Loader />}
       {contacts.error && <Error error={contacts.error} />}
-      {/* <ul className={style.list}>
+      <ul className={style.list}>
         {isLoggedIn &&
-          filteredContacts.items.map(contact => {
-            const { id, name, phone } = contact;
+          filteredContacts.map(contact => {
+            const { id, name, number } = contact;
             return (
               <li className={style.listEl} key={id}>
-                {name}: {phone}
+                {name}: {number}
                 <div className={style.listBtnWrap}>
                   <button
                     type="button"
@@ -48,7 +48,7 @@ const ContactList = () => {
               </li>
             );
           })}
-      </ul> */}
+      </ul>
     </>
   );
 };
