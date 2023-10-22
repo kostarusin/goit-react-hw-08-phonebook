@@ -1,27 +1,12 @@
-import { NavLink } from 'react-router-dom';
-import style from './AuthNav.module.css';
+import { Link } from './AuthNav.styled';
 
 const AuthNav = () => {
   return (
     <div>
-      <NavLink
-        exact
-        className={style.link}
-        activeClassName={style.active}
-        to="/register"
-      >
-        Register
-      </NavLink>
-      <NavLink
-        exact
-        className={style.link}
-        activeClassName={style.active}
-        to="/login"
-      >
-        Log In
-      </NavLink>
+      <Link to="/register">Register</Link>
+      <Link to="/login">Log In</Link>
     </div>
   );
 };
 
-export default AuthNav
+export default AuthNav;

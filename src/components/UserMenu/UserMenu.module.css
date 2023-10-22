@@ -10,17 +10,13 @@
 }
 
 .LogoutBtn {
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 8px 16px;
-  border: 0;
-  border-radius: 4px;
-  color: white;
-  background-color: rgb(83, 87, 87);
+  width: 100px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .LogoutBtn:hover {
-  color: black;
-  background-color: tomato;
+  background-color: rgb(83, 87, 87);
+  color: #ffffff;
 }
