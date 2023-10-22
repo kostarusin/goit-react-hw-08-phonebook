@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[163],{5163:function(e,t,n){n.r(t),n.d(t,{default:function(){return o}});var a="HomePage_title__Iqtik",c=n(184),r=function(){return(0,c.jsx)("h1",{className:a,children:"Contacts application welcome page"})},o=function(){return(0,c.jsx)(r,{})}}}]);
+//# sourceMappingURL=163.f879a3f9.chunk.js.map

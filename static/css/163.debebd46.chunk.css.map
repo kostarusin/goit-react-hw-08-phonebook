@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/163.debebd46.chunk.css","mappings":"AAAA,uBAEE,YAAa,CADb,eAAgB,CAEhB,mBACF","sources":["components/HomePage/HomePage.module.css"],"sourcesContent":[".title {\n  font-weight: 500;\n  font-size: 48;\n  text-align: 'center';\n}\n"],"names":[],"sourceRoot":""}
