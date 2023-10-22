@@ -32,7 +32,6 @@ const RegistrationForm = () => {
 
   return (
     <div>
-      <h1>Registration</h1>
       <form className={style.form} onSubmit={handleSubmit}>
         <label className={style.formLabel}>
           Name

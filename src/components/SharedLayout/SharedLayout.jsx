@@ -1,29 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { Container, Header, Link } from './SharedLayout.styled';
+import style from './SharedLayout.styled.module.css';
 import Loader from 'components/Loader/Loader';
-import UserMenu from 'components/UserMenu/UserMenu';
-import { useSelector } from 'react-redux';
-import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import AppBar from 'components/AppBar/AppBar';
 
 const SharedLayout = () => {
-  const isLoggedIn = useSelector(getIsLoggedIn);
   return (
-    <Container>
-      <Header>
-        <nav>
-          <Link to="/">Contacts</Link>
-          {!isLoggedIn && <Link to="/register">Registration</Link>}
-          {!isLoggedIn && <Link to="/login">Login</Link>}
-        </nav>
-        {isLoggedIn && <UserMenu />}
-      </Header>
+    <div className={style.container}>
+      <AppBar />
       <Suspense fallback={<Loader />}>
         <main>
           <Outlet />
         </main>
       </Suspense>
-    </Container>
+    </div>
   );
 };
 
